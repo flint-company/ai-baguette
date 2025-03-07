@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="ascii-container">
+    <!-- Logo from logo.txt -->
+    <pre class="ascii-art logo-art">{{ readFile "logo.txt" }}</pre>
+    
+    <!-- Content from ascii.txt -->
+    <pre class="ascii-art content-art">{{ readFile "ascii.txt" }}</pre>
+</div>
+{{ end }}

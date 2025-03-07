@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html lang="en-us" data-theme="dark">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="dark">
-    <meta name="theme-color" content="#121212">
-    <title>Tags</title>
-    <style>
- 
+<style>
+/* Full width layout with dark theme */
 :root {
     --main-width: 100%;
 }
 
 body {
-    font-size: 2px;  
+    font-size: 2px; /* Reduced from 5px to 2px */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,21 +19,21 @@ body {
     display: block;
     line-height: 1;
     width: 100%;
-    overflow-x: hidden;  
+    overflow-x: hidden; /* Changed from auto to hidden to prevent scrollbars */
     color: #ffffff;
-    font-size: 2px;  
-    transform-origin: top left;  
-    transform: scale(1);  
-    max-width: 100vw;  
+    font-size: 2px; /* Explicitly set font size */
+    transform-origin: top left; /* Set transform origin */
+    transform: scale(1); /* Allow adjusting scale if needed */
+    max-width: 100vw; /* Maximum width is viewport width */
 }
 
 .ascii-container {
-    padding-top: 15px;  
+    padding-top: 15px; /* Add padding to move content away from top of page */
 }
 
 .logo-art {
-    font-size: 3.5px;  
-    margin-bottom: 10px;  
+    font-size: 3.5px; /* Make the logo larger than the content */
+    margin-bottom: 10px; /* Add space between logo and content */
 }
 
 .container {
@@ -53,7 +45,7 @@ body {
     min-height: 100vh;
 }
 
- 
+/* Media queries to adjust font size based on screen width */
 @media (max-width: 1920px) {
     .ascii-art {
         font-size: 1.5px;
@@ -101,7 +93,7 @@ body {
 </style>
 
 <script>
-
+// Script to dynamically adjust ASCII art size
 document.addEventListener('DOMContentLoaded', function() {
     const asciiArt = document.querySelectorAll('.ascii-art');
     const container = document.querySelector('.container');
@@ -111,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const windowWidth = window.innerWidth;
         
         asciiArt.forEach(art => {
-            
+            // If the content is wider than the viewport, adjust the scale
             if (art.scrollWidth > windowWidth) {
                 const scale = windowWidth / art.scrollWidth;
                 art.style.transform = `scale(${scale})`;
@@ -120,21 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    
+    // Adjust size on load and when window is resized
     adjustAsciiSize();
     window.addEventListener('resize', adjustAsciiSize);
 });
 </script>
-</head>
-<body>
-    <div class="container">
-        
-<header class="page-header">
-    <h1>Tags</h1>
-</header>
-
-<ul class="terms-tags">
-</ul>
-    </div>
-</body>
-</html>
