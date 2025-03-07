@@ -1,0 +1,4 @@
+baseURL = 'https://ai-baguette.com'
+languageCode = 'en-us'
+title = 'AI Baguette website'
+theme =  'PaperMod'
